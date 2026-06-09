@@ -1,0 +1,129 @@
+:root {
+  --color-bookpurple: #3c1053;
+  --color-bookred: #f2120c;
+  --color-bookblack: #000000;
+  --color-bookwhite: #ffffff;
+  --color-lawpurple: #b51825;
+  --color-warmstone: #918b83;
+  --color-deepcharcoal: #302c2a;
+  --color-softivory: #f2efeb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-softivory);
+  color: var(--color-deepcharcoal);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header,
+footer {
+  padding: 0.75rem 1rem;
+  background: var(--color-bookpurple);
+  color: var(--color-bookwhite);
+}
+
+footer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+footer a {
+  color: var(--color-bookwhite);
+}
+
+.dashboard {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.panel {
+  border: 1px solid var(--color-warmstone);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: var(--color-bookwhite);
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  background: var(--color-bookred);
+  color: var(--color-bookwhite);
+  cursor: pointer;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  margin-top: 0.35rem;
+  border: 1px solid var(--color-warmstone);
+  border-radius: 6px;
+  padding: 0.45rem;
+}
+
+.cpuGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.ioGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.ramGrid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.ramCell {
+  border: 1px solid var(--color-warmstone);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  padding: 0.2rem;
+}
+
+.ramCell.highlighted {
+  border-color: var(--color-lawpurple);
+  background: #ffe8ea;
+}
+
+.addr {
+  font-weight: 700;
+}
+
+.val {
+  text-align: right;
+}
+
+@media (min-width: 900px) {
+  .ioGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
